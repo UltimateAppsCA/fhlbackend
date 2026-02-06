@@ -4,8 +4,8 @@ from sqlalchemy.future import select
 from passlib.context import CryptContext
 from jose import jwt
 from pydantic import BaseModel
-from ..db import get_db
-from ..models import User
+from db import get_db
+from models import User
 import os
 
 router = APIRouter(prefix="/users", tags=["users"])

@@ -3,8 +3,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from pydantic import BaseModel
-from ..db import get_db
-from ..models import FantasyTeam, User, League, Player, RosterSpot
+from db import get_db
+from models import FantasyTeam, User, League, Player, RosterSpot
 from jose import jwt, JWTError
 from fastapi.security import OAuth2PasswordBearer
 import os
