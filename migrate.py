@@ -1,7 +1,7 @@
 # Script to create tables in Neon PostgreSQL
 import asyncio
-from .db import engine
-from .models import Base
+from db import engine
+from models import Base
 
 async def create_tables():
     async with engine.begin() as conn:
