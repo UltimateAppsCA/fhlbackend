@@ -1,7 +1,7 @@
 # FastAPI app for Fantasy League Hockey
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routers import leagues, teams, users, init_db, players, scoring
+from routers import leagues, teams, users, init_db, players, scoring
 
 
 app = FastAPI()
