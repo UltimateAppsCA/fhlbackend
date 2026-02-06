@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 import asyncio
-from ..migrate import create_tables
+from migrate import create_tables
 
 router = APIRouter(prefix="/init-db", tags=["init-db"])
 
