@@ -28,7 +28,9 @@ async def register(user: UserCreate, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(User).where(User.username == user.username))
     if result.scalar():
         raise HTTPException(status_code=400, detail="Username already exists")
-    hashed_pw = pwd_context.hash(user.password)
+    MAX_BCRYPT_LENGTH = 72
+    password = user.password[:MAX_BCRYPT_LENGTH]
+    hashed_pw = pwd_context.hash(password)
     db_user = User(username=user.username, email=user.email)
     db_user.hashed_password = hashed_pw
     db.add(db_user)
